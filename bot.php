@@ -47,9 +47,9 @@ function proKurs($keyword) {
     $result = "Status  : ";
 	$result .= $json['Message']['Code'];
 	$result .= "\nHarga Jual : ";
-	$result .= $json['Data']['$keyword']['Jual'];
+	$result .= $json['Data'][$keyword]['Jual'];
 	$result .= "\n\nHarga Beli : ";
-	$result .= $json['Data']['$keyword']['Beli'];
+	$result .= $json['Data'][$keyword]['Beli'];
 
     return $result;
 }
