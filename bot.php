@@ -9,8 +9,8 @@ Modified @ Farzain - zFz
 require_once('./line_class.php');
 require_once('./unirest-php-master/src/Unirest.php');
 
-$channelAccessToken = 't2KjXuy7+pLHxht+xoWAZyOlzGQoRMRSvo5/wof/xxguoLIm9O7Ae2ysPKdd3/dr6PJcKehDWkXcUsE9TohhRZXjSrPQuOdPYlC/hxeB6/xQaCbAfb3uFCwi2loNQJiHM6JXLeoSRRoZiCAdUkTcaQdB04t89/1O/w1cDnyilFU='; //sesuaikan 
-$channelSecret = '11433f07affabf4d33057fa901262fd4';//sesuaikan
+$channelAccessToken = '8Ryaf6ulY1+ehr4/hNItyUTVzMxRKX1t/eNt46EuJ8OvpjhIcG/NtqcHEZr7Z/KRr6LiWm5JcEo2oSj2MwsredA31E9FIYVxR+IdGzP7RBrsonATFDHHLBZ32XRKA+bzABnuFywzSV6iAKnanC0cFwdB04t89/1O/w1cDnyilFU='; //sesuaikan 
+$channelSecret = '5cd2bd7d45323f47bbedb6e32b03075f';//sesuaikan
 
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 
@@ -37,26 +37,20 @@ if (count($pesan_datang) > 2) {
 }
 
 #-------------------------[Function]-------------------------#
-function shalat($keyword) {
-    $uri = "https://time.siswadi.com/pray/" . $keyword;
+function proKurs($keyword) {
+    $uri = "http://www.adisurya.net/kurs-bca/get?MataUang=" . $keyword;
 
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
-    $result = "Jadwal Shalat Sekitar ";
-	$result .= $json['location']['address'];
-	$result .= "\nTanggal : ";
-	$result .= $json['time']['date'];
-	$result .= "\n\nShubuh : ";
-	$result .= $json['data']['Fajr'];
-	$result .= "\nDzuhur : ";
-	$result .= $json['data']['Dhuhr'];
-	$result .= "\nAshar : ";
-	$result .= $json['data']['Asr'];
-	$result .= "\nMaghrib : ";
-	$result .= $json['data']['Maghrib'];
-	$result .= "\nIsya : ";
-	$result .= $json['data']['Isha'];
+//	if ($json['message']['code'] == 200){
+    $result = "Status  : ";
+	$result .= $json['message']['code'];
+	$result .= "\nHarga Jual : ";
+	$result .= $json['data']['$keyword']['Jual'];
+	$result .= "\n\nHarga Beli : ";
+	$result .= $json['data']['$keyword']['Beli'];
+
     return $result;
 }
 #-------------------------[Function]-------------------------#
@@ -83,9 +77,9 @@ if ($type == 'join' || $command == '/menu') {
 
 //pesan bergambar
 if($message['type']=='text') {
-	    if ($command == 'shalat') {
+	    if ($command == 'KURS') {
 
-        $result = shalat($options);
+        $result = proKurs($options);
         $balas = array(
             'replyToken' => $replyToken,
             'messages' => array(
@@ -95,31 +89,7 @@ if($message['type']=='text') {
                 )
             )
         );
-    }else if ($command == 'Shalat') {
-
-        $result = shalat($options);
-        $balas = array(
-            'replyToken' => $replyToken,
-            'messages' => array(
-                array(
-                    'type' => 'text',
-                    'text' => $result
-                )
-            )
-        );
-	    }else if ($command == 'SHALAT') {
-
-        $result = shalat($options);
-        $balas = array(
-            'replyToken' => $replyToken,
-            'messages' => array(
-                array(
-                    'type' => 'text',
-                    'text' => $result
-                )
-            )
-        );
-	    }
+    }
 }else if($message['type']=='sticker')
 {	
 	$balas = array(
