@@ -45,11 +45,11 @@ function proKurs($keyword) {
     $json = json_decode($response->raw_body, true);
 //	if ($json['message']['code'] == 200){
     $result = "Status  : ";
-	$result .= $json['message']['code'];
+	$result .= $json['Message']['Code'];
 	$result .= "\nHarga Jual : ";
-	$result .= $json['data']['$keyword']['Jual'];
+	$result .= $json['Data']['$keyword']['Jual'];
 	$result .= "\n\nHarga Beli : ";
-	$result .= $json['data']['$keyword']['Beli'];
+	$result .= $json['Data']['$keyword']['Beli'];
 
     return $result;
 }
