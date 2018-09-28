@@ -30,7 +30,7 @@ $pesan_datang = explode(" ", strtoupper($message['text']));
 $command = $pesan_datang[0];
 $options = $pesan_datang[1];
 // identifikasi mata uang
-/*if ($pesan_datang[1] == 'USD'){
+if ($pesan_datang[1] == 'USD'){
 	$mataUang = "Dollar Amerika Serikat"
 }else if($pesan_datang[1] == 'AUD'){
 	$mataUang = "Dollar Australia"
@@ -59,7 +59,7 @@ $options = $pesan_datang[1];
 }else if($pesan_datang[1] == 'SGD'){
 	$mataUang = "Dollar Singapore"
 }
-*/
+
 if (count($pesan_datang) > 2) {
     for ($i = 2; $i < count($pesan_datang); $i++) {
         $options .= '+';
@@ -75,7 +75,7 @@ function proKurs($keyword) {
 
     $json = json_decode($response->raw_body, true);
 //	if ($json['message']['code'] == 200){
-    $result = "KURS MATA UANG ";
+    $result = "KURS MATA UANG \n" . $matauang;
 //	$result .= "\n";
 //	$result .= $matauang 
 //	$result	. "(";
