@@ -76,8 +76,8 @@ function proKurs($keyword) {
     $json = json_decode($response->raw_body, true);
 //	if ($json['message']['code'] == 200){
     $result = "KURS MATA UANG ";
-	$result .= "\n";
-	$result .= $matauang 
+//	$result .= "\n";
+//	$result .= $matauang 
 //	$result	. "(";
 //	$result .= $keyword . ")";
 	$result .= "\n\nWaktu Efektif : ";
