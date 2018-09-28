@@ -29,6 +29,35 @@ $pesan_datang = explode(" ", strtoupper($message['text']));
 
 $command = $pesan_datang[0];
 $options = $pesan_datang[1];
+// identifikasi mata uang
+if ($pesan_datang[1] == 'USD'){
+	$mataUang = "Dollar Amerika Serikat"
+}else if($pesan_datang[1] == 'AUD'){
+	$mataUang = "Dollar Australia"
+}else if($pesan_datang[1] == 'CAD'){
+	$mataUang = "Dollar Kanada"
+}else if($pesan_datang[1] == 'CHF'){
+	$mataUang = "Franc Swiss"
+}else if($pesan_datang[1] == 'CNY'){
+	$mataUang = "Yuan China"
+}else if($pesan_datang[1] == 'DKK'){
+	$mataUang = "Krone Denmark"
+}else if($pesan_datang[1] == 'EUR'){
+	$mataUang = "Euro"
+}else if($pesan_datang[1] == 'GBP'){
+	$mataUang = "Poundsterling German"
+}else if($pesan_datang[1] == 'HKD'){
+	$mataUang = "Dollar Hongkong"
+}else if($pesan_datang[1] == 'JPY'){
+	$mataUang = "Yen Japan"
+}else if($pesan_datang[1] == 'NZD'){
+	$mataUang = "Dollar New Zealand"
+}else if($pesan_datang[1] == 'SAR'){
+	$mataUang = "Riyal Saudi Arabia"
+}else if($pesan_datang[1] == 'SEK'){
+	$mataUang = "Dollar Amerika Serikat"
+}else if
+	
 if (count($pesan_datang) > 2) {
     for ($i = 2; $i < count($pesan_datang); $i++) {
         $options .= '+';
