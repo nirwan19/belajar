@@ -115,7 +115,18 @@ if ($type == 'join' || $command == '/menu') {
 
 //pesan bergambar
 if($message['type']=='text') {
-	    if ($command == 'KURS') {
+	if ($command != 'KURS' || $command != 'HELP'|| $command != 'MENU'){
+		$balas = array(
+            	'replyToken' => $replyToken,
+            	'messages' => array(
+                	array(
+                    	'type' => 'text',
+                    	'text' => 'Maaf, maksudnya gmn ya kak?? ketik Help untuk bantuan ya?? ^_^'
+                		)
+            		)
+        	);
+	}
+	else if ($command == 'KURS') {
 
         $result = proKurs($options);
         $balas = array(
