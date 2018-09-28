@@ -80,7 +80,7 @@ if ($keyword == 'USD'){
         $result = "KURS MATA UANG";
 	$result .= "\n";
 	$result .= strtoupper($mataUang);
-	$result	. "(";
+	$result	. " (";
 	$result .= $keyword . ")";
 	$result .= "\n\nWaktu Efektif : ";
 	$result .= $json['LastUpdate'];
