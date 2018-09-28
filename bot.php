@@ -29,38 +29,7 @@ $pesan_datang = explode(" ", strtoupper($message['text']));
 
 $command = $pesan_datang[0];
 $options = $pesan_datang[1];
-// identifikasi mata uang
-/*
-if ($pesan_datang[1] == 'USD'){
-	$mataUang = "Dollar Amerika Serikat"
-}else if($pesan_datang[1] == 'AUD'){
-	$mataUang = "Dollar Australia"
-}else if($pesan_datang[1] == 'CAD'){
-	$mataUang = "Dollar Kanada"
-}else if($pesan_datang[1] == 'CHF'){
-	$mataUang = "Franc Swiss"
-}else if($pesan_datang[1] == 'CNY'){
-	$mataUang = "Yuan China"
-}else if($pesan_datang[1] == 'DKK'){
-	$mataUang = "Krone Denmark"
-}else if($pesan_datang[1] == 'EUR'){
-	$mataUang = "Euro"
-}else if($pesan_datang[1] == 'GBP'){
-	$mataUang = "Poundsterling German"
-}else if($pesan_datang[1] == 'HKD'){
-	$mataUang = "Dollar Hongkong"
-}else if($pesan_datang[1] == 'JPY'){
-	$mataUang = "Yen Japan"
-}else if($pesan_datang[1] == 'NZD'){
-	$mataUang = "Dollar New Zealand"
-}else if($pesan_datang[1] == 'SAR'){
-	$mataUang = "Riyal Saudi Arabia"
-}else if($pesan_datang[1] == 'SEK'){
-	$mataUang = "Krona Swedia"
-}else if($pesan_datang[1] == 'SGD'){
-	$mataUang = "Dollar Singapore"
-}
-*/
+
 
 if (count($pesan_datang) > 2) {
     for ($i = 2; $i < count($pesan_datang); $i++) {
@@ -72,13 +41,42 @@ if (count($pesan_datang) > 2) {
 #-------------------------[Function]-------------------------#
 function proKurs($keyword) {
     $uri = "http://www.adisurya.net/kurs-bca/get?MataUang=" . $keyword;
-
+// identifikasi mata uang
+if ($keyword == 'USD'){
+	$mataUang = "Dollar Amerika Serikat"
+}else if($keyword == 'AUD'){
+	$mataUang = "Dollar Australia"
+}else if($keyword == 'CAD'){
+	$mataUang = "Dollar Kanada"
+}else if($keyword == 'CHF'){
+	$mataUang = "Franc Swiss"
+}else if($keyword == 'CNY'){
+	$mataUang = "Yuan China"
+}else if($keyword == 'DKK'){
+	$mataUang = "Krone Denmark"
+}else if($keyword == 'EUR'){
+	$mataUang = "Euro"
+}else if($keyword == 'GBP'){
+	$mataUang = "Poundsterling German"
+}else if($keyword == 'HKD'){
+	$mataUang = "Dollar Hongkong"
+}else if($keyword == 'JPY'){
+	$mataUang = "Yen Japan"
+}else if($keyword == 'NZD'){
+	$mataUang = "Dollar New Zealand"
+}else if($keyword == 'SAR'){
+	$mataUang = "Riyal Saudi Arabia"
+}else if($keyword == 'SEK'){
+	$mataUang = "Krona Swedia"
+}else if($keyword == 'SGD'){
+	$mataUang = "Dollar Singapore"
+}
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
 //	if ($json['message']['code'] == 200){
         $result = "KURS MATA UANG";
-//	$matauang;
+ 	$result .= $matauang;
 //	$result .= "\n";
 //	$result .= $matauang 
 //	$result	. "(";
