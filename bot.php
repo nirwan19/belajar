@@ -30,14 +30,23 @@ $pesan_datang = explode(" ", strtoupper($message['text']));
 $command = $pesan_datang[0];
 $options = $pesan_datang[1];
 
-
 if (count($pesan_datang) > 2) {
     for ($i = 2; $i < count($pesan_datang); $i++) {
         $options .= '+';
         $options .= $pesan_datang[$i];
     }
 }
-
+if ($command <> 'KURS' || $command <> 'HELP'|| $command <> 'MENU'){
+		$balas = array(
+            	'replyToken' => $replyToken,
+            	'messages' => array(
+                	array(
+                    	'type' => 'text',
+                    	'text' => 'Maaf, maksudnya gmn ya kak?? ketik Help untuk bantuan ya?? ^_^'
+                		)
+            		)
+        	);
+	}
 #-------------------------[Function]-------------------------#
 function proKurs($keyword) {
     $uri = "http://www.adisurya.net/kurs-bca/get?MataUang=" . $keyword;
@@ -115,18 +124,7 @@ if ($type == 'join' || $command == '/menu') {
 
 //pesan bergambar
 if($message['type']=='text') {
-	if ($command <> 'KURS' || $command <> 'HELP'|| $command <> 'MENU'){
-		$balas = array(
-            	'replyToken' => $replyToken,
-            	'messages' => array(
-                	array(
-                    	'type' => 'text',
-                    	'text' => 'Maaf, maksudnya gmn ya kak?? ketik Help untuk bantuan ya?? ^_^'
-                		)
-            		)
-        	);
-	}
-	else if ($command == 'KURS') {
+	if ($command == 'KURS') {
 
         $result = proKurs($options);
         $balas = array(
