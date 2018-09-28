@@ -44,11 +44,13 @@ function proKurs($keyword) {
 
     $json = json_decode($response->raw_body, true);
 //	if ($json['message']['code'] == 200){
-    $result = "Status  : ";
-	$result .= $json['Message']['Code'];
+    $result = "KURS MATA UANG ";
+	$result .= $keyword;
+	$result .= "\n\nWaktu Efektif : ";
+	$result .= $json['LastUpdate'];
 	$result .= "\nHarga Jual : ";
 	$result .= $json['Data'][$keyword]['Jual'];
-	$result .= "\n\nHarga Beli : ";
+	$result .= "\nHarga Beli : ";
 	$result .= $json['Data'][$keyword]['Beli'];
 
     return $result;
@@ -63,7 +65,7 @@ function proKurs($keyword) {
 
 //show menu, saat join dan command /menu
 if ($type == 'join' || $command == '/menu') {
-    $text = "Assalamualaikum Agan, untuk mendapatkan jadwal shalat, silahkan ketik\n\n shalat <nama tempat>\n\nnanti aku bakalan kasih tahu jam berapa waktunya shalat ^_^";
+    $text = "Assalamualaikum Agan, untuk mendapatkan Nilai Mata uang, silahkan ketik\n\n KURS <Kode Mata Uang>\n\nnanti aku informasikan nilai mata uangnya ya?? ^_^";
     $balas = array(
         'replyToken' => $replyToken,
         'messages' => array(
