@@ -25,7 +25,7 @@ $messageid 	= $client->parseEvents()[0]['message']['id'];
 
 $profil = $client->profil($userId);
 
-$pesan_datang = explode(" ", $message['text']);
+$pesan_datang = explode(" ", strtoupper($message['text']));
 
 $command = $pesan_datang[0];
 $options = $pesan_datang[1];
