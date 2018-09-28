@@ -75,7 +75,8 @@ function proKurs($keyword) {
 
     $json = json_decode($response->raw_body, true);
 //	if ($json['message']['code'] == 200){
-    $result = "KURS MATA UANG \n" . $matauang;
+        $result = "KURS MATA UANG";
+//	$matauang;
 //	$result .= "\n";
 //	$result .= $matauang 
 //	$result	. "(";
