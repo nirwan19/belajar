@@ -30,7 +30,7 @@ $pesan_datang = explode(" ", strtoupper($message['text']));
 $command = $pesan_datang[0];
 $options = $pesan_datang[1];
 // identifikasi mata uang
-if ($pesan_datang[1] == 'USD'){
+/*if ($pesan_datang[1] == 'USD'){
 	$mataUang = "Dollar Amerika Serikat"
 }else if($pesan_datang[1] == 'AUD'){
 	$mataUang = "Dollar Australia"
@@ -58,7 +58,8 @@ if ($pesan_datang[1] == 'USD'){
 	$mataUang = "Krona Swedia"
 }else if($pesan_datang[1] == 'SGD'){
 	$mataUang = "Dollar Singapore"
-}	
+}
+*/
 if (count($pesan_datang) > 2) {
     for ($i = 2; $i < count($pesan_datang); $i++) {
         $options .= '+';
