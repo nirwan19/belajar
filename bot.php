@@ -76,8 +76,9 @@ function proKurs($keyword) {
 //	if ($json['message']['code'] == 200){
     $result = "KURS MATA UANG ";
 	$result .= "\n";
-	$result .= $matauang . "(";
-	$result .= $keyword . ")";
+	$result .= $matauang 
+//	$result	. "(";
+//	$result .= $keyword . ")";
 	$result .= "\n\nWaktu Efektif : ";
 	$result .= $json['LastUpdate'];
 	$result .= "\nHarga Jual : ";
