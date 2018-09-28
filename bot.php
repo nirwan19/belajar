@@ -42,7 +42,7 @@ if (count($pesan_datang) > 2) {
 function proKurs($keyword) {
     $uri = "http://www.adisurya.net/kurs-bca/get?MataUang=" . $keyword;
 // identifikasi mata uang
-/*
+
 if ($keyword == "USD"){
 	$mataUang = "Dollar Amerika Serikat"
 }else if($keyword == "AUD"){
@@ -72,13 +72,13 @@ if ($keyword == "USD"){
 }else if($keyword == "SGD"){
 	$mataUang = "Dollar Singapore"
 }
-*/
+
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
 //	if ($json['message']['code'] == 200){
         $result = "KURS MATA UANG";
- 	$result .= $matauang;
+ 	$result .= $mataUang;
 //	$result .= "\n";
 //	$result .= $matauang 
 //	$result	. "(";
