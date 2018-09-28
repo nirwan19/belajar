@@ -42,43 +42,43 @@ if (count($pesan_datang) > 2) {
 function proKurs($keyword) {
     $uri = "http://www.adisurya.net/kurs-bca/get?MataUang=" . $keyword;
 // identifikasi mata uang
-/*
-if ($keyword == 'USD'){
+
+if ($keyword == "USD"){
 	$mataUang = "Dollar Amerika Serikat"
-}else if($keyword == 'AUD'){
+}else if($keyword == "AUD"){
 	$mataUang = "Dollar Australia"
-}else if($keyword == 'CAD'){
+}else if($keyword == "CAD"){
 	$mataUang = "Dollar Kanada"
-}else if($keyword == 'CHF'){
+}else if($keyword == "CHF"){
 	$mataUang = "Franc Swiss"
-}else if($keyword == 'CNY'){
+}else if($keyword == "CNY"){
 	$mataUang = "Yuan China"
-}else if($keyword == 'DKK'){
+}else if($keyword == "DKK"){
 	$mataUang = "Krone Denmark"
-}else if($keyword == 'EUR'){
+}else if($keyword == "EUR"){
 	$mataUang = "Euro"
-}else if($keyword == 'GBP'){
+}else if($keyword == "GBP"){
 	$mataUang = "Poundsterling German"
-}else if($keyword == 'HKD'){
+}else if($keyword == "HKD"){
 	$mataUang = "Dollar Hongkong"
-}else if($keyword == 'JPY'){
+}else if($keyword == "JPY"){
 	$mataUang = "Yen Japan"
-}else if($keyword == 'NZD'){
+}else if($keyword == "NZD"){
 	$mataUang = "Dollar New Zealand"
-}else if($keyword == 'SAR'){
+}else if($keyword == "SAR"){
 	$mataUang = "Riyal Saudi Arabia"
-}else if($keyword == 'SEK'){
+}else if($keyword == "SEK"){
 	$mataUang = "Krona Swedia"
-}else if($keyword == 'SGD'){
+}else if($keyword == "SGD"){
 	$mataUang = "Dollar Singapore"
 }
-*/
+
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
 //	if ($json['message']['code'] == 200){
         $result = "KURS MATA UANG";
-// 	$result .= $matauang;
+ 	$result .= $matauang;
 //	$result .= "\n";
 //	$result .= $matauang 
 //	$result	. "(";
