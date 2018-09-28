@@ -78,11 +78,10 @@ if ($keyword == 'USD'){
     $json = json_decode($response->raw_body, true);
 //	if ($json['message']['code'] == 200){
         $result = "KURS MATA UANG";
- 	$result .= $mataUang;
-//	$result .= "\n";
-//	$result .= $matauang 
-//	$result	. "(";
-//	$result .= $keyword . ")";
+	$result .= "\n";
+	$result .= strtoupper($mataUang);
+	$result	. "(";
+	$result .= $keyword . ")";
 	$result .= "\n\nWaktu Efektif : ";
 	$result .= $json['LastUpdate'];
 	$result .= "\nHarga Jual : ";
