@@ -115,7 +115,7 @@ if ($type == 'join' || $command == '/menu') {
 
 //pesan bergambar
 if($message['type']=='text') {
-	if ($command != 'KURS' || $command != 'HELP'|| $command != 'MENU'){
+	if ($command <> 'KURS' || $command <> 'HELP'|| $command <> 'MENU'){
 		$balas = array(
             	'replyToken' => $replyToken,
             	'messages' => array(
