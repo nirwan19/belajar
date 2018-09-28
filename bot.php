@@ -49,9 +49,9 @@ function proKurs($keyword) {
 	$result .= "\n\nWaktu Efektif : ";
 	$result .= $json['LastUpdate'];
 	$result .= "\nHarga Jual : ";
-	$result .= number_format($json['Data'][$keyword]['Jual'],2);
+	$result .= number_format($json['Data'][$keyword]['Jual']);
 	$result .= "\nHarga Beli : ";
-	$result .= number_format($json['Data'][$keyword]['Beli'],2);
+	$result .= number_format($json['Data'][$keyword]['Beli']);
 
     return $result;
 }
