@@ -44,33 +44,33 @@ function proKurs($keyword) {
 // identifikasi mata uang
 
 if ($keyword == 'USD'){
-	$mataUang = "Dollar Amerika Serikat"
+	$mataUang = "Dollar Amerika Serikat";
 }else if($keyword == 'AUD'){
-	$mataUang = "Dollar Australia"
+	$mataUang = "Dollar Australia";
 }else if($keyword == 'CAD'){
-	$mataUang = "Dollar Kanada"
+	$mataUang = "Dollar Kanada";
 }else if($keyword == 'CHF'){
-	$mataUang = "Franc Swiss"
+	$mataUang = "Franc Swiss";
 }else if($keyword == 'CNY'){
-	$mataUang = "Yuan China"
+	$mataUang = "Yuan China";
 }else if($keyword == 'DKK'){
-	$mataUang = "Krone Denmark"
+	$mataUang = "Krone Denmark";
 }else if($keyword == 'EUR'){
-	$mataUang = "Euro"
+	$mataUang = "Euro";
 }else if($keyword == 'GBP'){
-	$mataUang = "Poundsterling German"
+	$mataUang = "Poundsterling German";
 }else if($keyword == 'HKD'){
-	$mataUang = "Dollar Hongkong"
+	$mataUang = "Dollar Hongkong";
 }else if($keyword == 'JPY'){
-	$mataUang = "Yen Japan"
+	$mataUang = "Yen Japan";
 }else if($keyword == 'NZD'){
-	$mataUang = "Dollar New Zealand"
+	$mataUang = "Dollar New Zealand";
 }else if($keyword == 'SAR'){
-	$mataUang = "Riyal Saudi Arabia"
+	$mataUang = "Riyal Saudi Arabia";
 }else if($keyword == 'SEK'){
-	$mataUang = "Krona Swedia"
+	$mataUang = "Krona Swedia";
 }else if($keyword == 'SGD'){
-	$mataUang = "Dollar Singapore"
+	$mataUang = "Dollar Singapore";
 }
 
     $response = Unirest\Request::get("$uri");
