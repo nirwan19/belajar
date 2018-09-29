@@ -9,8 +9,8 @@ Modified @ Farzain - zFz
 require_once('./line_class.php');
 require_once('./unirest-php-master/src/Unirest.php');
 
-$channelAccessToken = '8Ryaf6ulY1+ehr4/hNItyUTVzMxRKX1t/eNt46EuJ8OvpjhIcG/NtqcHEZr7Z/KRr6LiWm5JcEo2oSj2MwsredA31E9FIYVxR+IdGzP7RBrsonATFDHHLBZ32XRKA+bzABnuFywzSV6iAKnanC0cFwdB04t89/1O/w1cDnyilFU='; //sesuaikan 
-$channelSecret = '5cd2bd7d45323f47bbedb6e32b03075f';//sesuaikan
+$channelAccessToken = 'L6ppUhvXPvaIr1w/roEyT0tPfbM4iD22TQ6PGWbk1P+t5Q0bxgI8uwQZEHfM3XIs+0g4y0EMoL7eJIpleTWLVsE6LlmKae9l5LgAjTKpFINSspaRr9Gj62XkrYtZigcN22AneDD41G+KBH5gvOemRgdB04t89/1O/w1cDnyilFU='; //sesuaikan 
+$channelSecret = 'e5ce69331dc64e90d1ee5f55f24f272d';//sesuaikan
 
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 
@@ -48,8 +48,8 @@ if ($command <> 'KURS' || $command <> 'HELP'|| $command <> 'MENU'){
         	);
 	}
 #-------------------------[Function]-------------------------#
-function proKurs($keyword) {
-    $uri = "http://www.adisurya.net/kurs-bca/get?MataUang=" . $keyword;
+function muiHalal($keyword) {
+    $uri = "https://sites.google.com/macros/exec?service=AKfycbx_-gZbLP7Z2gGxehXhWMWDAAQsTp3e3bmpTBiaLuzSDQSbIFWD&menu=nama_produk&query=" . $keyword;
 // identifikasi mata uang
 
 if ($keyword == 'USD'){
@@ -88,15 +88,15 @@ if ($keyword == 'USD'){
 //	if ($json['message']['code'] == 200){
         $result = "KURS MATA UANG";
 	$result .= "\n";
-	$result .= strtoupper($mataUang);
-	$result	.= " (";
-	$result .= $keyword . ")";
-	$result .= "\n\nWaktu Efektif : ";
-	$result .= $json['LastUpdate'];
-	$result .= "\nHarga Jual : ";
-	$result .= number_format($json['Data'][$keyword]['Jual']);
-	$result .= "\nHarga Beli : ";
-	$result .= number_format($json['Data'][$keyword]['Beli']);
+//	$result .= strtoupper($mataUang);
+//	$result	.= " (";
+//	$result .= $keyword . ")";
+//	$result .= "\n\nWaktu Efektif : ";
+	$result .= $json['status'];
+//	$result .= "\nHarga Jual : ";
+//	$result .= number_format($json['Data'][$keyword]['Jual']);
+//	$result .= "\nHarga Beli : ";
+//	$result .= number_format($json['Data'][$keyword]['Beli']);
 
     return $result;
 }
@@ -109,7 +109,7 @@ if ($keyword == 'USD'){
 # require_once('./src/function/hard.php');
 
 //show menu, saat join dan command /menu
-if ($type == 'join' || $command == '/menu') {
+if ($type == 'join' || $command == 'MENU') {
     $text = "Assalamualaikum Agan, untuk mendapatkan Nilai Mata uang, silahkan ketik\n\n KURS <Kode Mata Uang>\n\nnanti aku informasikan nilai mata uangnya ya?? ^_^";
     $balas = array(
         'replyToken' => $replyToken,
@@ -124,9 +124,9 @@ if ($type == 'join' || $command == '/menu') {
 
 //pesan bergambar
 if($message['type']=='text') {
-	if ($command == 'KURS') {
+	if ($command == 'HALAL') {
 
-        $result = proKurs($options);
+        $result = muiHalal($options);
         $balas = array(
             'replyToken' => $replyToken,
             'messages' => array(
