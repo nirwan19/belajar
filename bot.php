@@ -112,7 +112,7 @@ if ($type == 'join' || $command == 'MENU') {
         )
     );
 }
-if ($command == 'HALO' || $command == 'HAI' || $command == 'HALO,' || $command == 'HAI,' ||$command == 'SELAMAT' ||) {
+if ($command == 'HALO' || $command == 'HAI' || $command == 'HALO,' || $command == 'HAI,' ||$command == 'SELAMAT') {
     $text ="Halo Kakak";
     $balas = array(
         'replyToken' => $replyToken,
