@@ -55,7 +55,7 @@ if ($kata1 <> 'HALAL' || $kata1 <> 'HELP' || $kata1 <> 'HALO' || $kata1 <> 'HAI'
             	'messages' => array(
                 	array(
                     	'type' => 'text',
-                    	'text' => 'Maaf, maksudnya gmn ya kak?? ketik Help untuk bantuan ya?? ^_^'
+                    	'text' => 'Maaf, maksudnya gmn ya kak?? ketik Help untuk bantuan ya?? ^_^ '.$kata1
                 		)
             		)
         	);
