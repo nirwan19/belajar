@@ -123,7 +123,7 @@ if($message['type']=='text') {
         'messages' => array(
               	array(
                	'type' => 'text',
-               	'text' => rand('Halo.. Ada yg bisa dibantu ?? ^_^','Hai, bagaimana kabar hari ini, semoga sehat selalu ya?? ^_^','Hai, Bisa saya bantu?? ^_^')
+               	'text' => 'Halo.. Ada yg bisa dibantu ?? ^_^'
         	)
            )
        	);
