@@ -49,69 +49,20 @@ if (count($pesan_datang) > 2) {
     }
 }
 
-if ($kata1 != "HALAL"){
+/*
+if ($kata1 != "HALAL" or $kata1 != "HELP" or $kata1 != "HALO" or $kata1 != "HALO," or $kata1 != "HAI," or $kata1 != "HAI"){
 		$balas = array(
             	'replyToken' => $replyToken,
             	'messages' => array(
                 	array(
                     	'type' => 'text',
-                    	'text' => 'Maaf, maksudnya gmn ya kak?? ketik Help untuk bantuan ya?? ^_^ '.$kata1
-                		)
-            		)
-        	);
-}else if ($kata1 != "HELP"){
-		$balas = array(
-            	'replyToken' => $replyToken,
-            	'messages' => array(
-                	array(
-                    	'type' => 'text',
-                    	'text' => 'Maaf, maksudnya gmn ya kak?? ketik Help untuk bantuan ya?? ^_^ '.$kata1
-                		)
-            		)
-        	);
-}else if ($kata1 != "HALO"){
-		$balas = array(
-            	'replyToken' => $replyToken,
-            	'messages' => array(
-                	array(
-                    	'type' => 'text',
-                    	'text' => 'Maaf, maksudnya gmn ya kak?? ketik Help untuk bantuan ya?? ^_^ '.$kata1
-                		)
-            		)
-        	);
-}else if ($kata1 != "HALO,"){
-		$balas = array(
-            	'replyToken' => $replyToken,
-            	'messages' => array(
-                	array(
-                    	'type' => 'text',
-                    	'text' => 'Maaf, maksudnya gmn ya kak?? ketik Help untuk bantuan ya?? ^_^ '.$kata1
-                		)
-            		)
-        	);
-}else if ($kata1 != "HAI,"){
-		$balas = array(
-            	'replyToken' => $replyToken,
-            	'messages' => array(
-                	array(
-                    	'type' => 'text',
-                    	'text' => 'Maaf, maksudnya gmn ya kak?? ketik Help untuk bantuan ya?? ^_^ '.$kata1
-                		)
-            		)
-        	);
-}else if ($kata1 != "HAI"){
-		$balas = array(
-            	'replyToken' => $replyToken,
-            	'messages' => array(
-                	array(
-                    	'type' => 'text',
-                    	'text' => 'Maaf, maksudnya gmn ya kak?? ketik Help untuk bantuan ya?? ^_^ '.$kata1
+                    	'text' => 'Bakso Bakso...?? ^_^ '.$kata1
                 		)
             		)
         	);
 }
+*/
 
-/*
 if ($kata1 == 'HALO' || $kata1 == 'HAI' || $kata1 == 'HALO,' || $kata1 == 'HAI,'){
 		$balas = array(
             	'replyToken' => $replyToken,
@@ -123,7 +74,7 @@ if ($kata1 == 'HALO' || $kata1 == 'HAI' || $kata1 == 'HALO,' || $kata1 == 'HAI,'
             		)
         	);
 	}
-*/
+
 
 #-------------------------[Function]-------------------------#
 function muiHalal($keyword) {
