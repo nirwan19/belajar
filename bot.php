@@ -49,7 +49,57 @@ if (count($pesan_datang) > 2) {
     }
 }
 
-if ($kata1 != "HALAL" or $kata1 != "HELP" or $kata1 != "HALO" or $kata1 != "HALO," or $kata1 != "HAI," or $kata1 != "HAI"){
+if ($kata1 != "HALAL"){
+		$balas = array(
+            	'replyToken' => $replyToken,
+            	'messages' => array(
+                	array(
+                    	'type' => 'text',
+                    	'text' => 'Maaf, maksudnya gmn ya kak?? ketik Help untuk bantuan ya?? ^_^ '.$kata1
+                		)
+            		)
+        	);
+}else if ($kata1 != "HELP"){
+		$balas = array(
+            	'replyToken' => $replyToken,
+            	'messages' => array(
+                	array(
+                    	'type' => 'text',
+                    	'text' => 'Maaf, maksudnya gmn ya kak?? ketik Help untuk bantuan ya?? ^_^ '.$kata1
+                		)
+            		)
+        	);
+}else if ($kata1 != "HALO"){
+		$balas = array(
+            	'replyToken' => $replyToken,
+            	'messages' => array(
+                	array(
+                    	'type' => 'text',
+                    	'text' => 'Maaf, maksudnya gmn ya kak?? ketik Help untuk bantuan ya?? ^_^ '.$kata1
+                		)
+            		)
+        	);
+}else if ($kata1 != "HALO,"){
+		$balas = array(
+            	'replyToken' => $replyToken,
+            	'messages' => array(
+                	array(
+                    	'type' => 'text',
+                    	'text' => 'Maaf, maksudnya gmn ya kak?? ketik Help untuk bantuan ya?? ^_^ '.$kata1
+                		)
+            		)
+        	);
+}else if ($kata1 != "HAI,"){
+		$balas = array(
+            	'replyToken' => $replyToken,
+            	'messages' => array(
+                	array(
+                    	'type' => 'text',
+                    	'text' => 'Maaf, maksudnya gmn ya kak?? ketik Help untuk bantuan ya?? ^_^ '.$kata1
+                		)
+            		)
+        	);
+}else if ($kata1 != "HAI"){
 		$balas = array(
             	'replyToken' => $replyToken,
             	'messages' => array(
@@ -60,6 +110,7 @@ if ($kata1 != "HALAL" or $kata1 != "HELP" or $kata1 != "HALO" or $kata1 != "HALO
             		)
         	);
 }
+
 /*
 if ($kata1 == 'HALO' || $kata1 == 'HAI' || $kata1 == 'HALO,' || $kata1 == 'HAI,'){
 		$balas = array(
