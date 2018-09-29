@@ -52,51 +52,22 @@ function muiHalal($keyword) {
     $uri = "https://sites.google.com/macros/exec?service=AKfycbx_-gZbLP7Z2gGxehXhWMWDAAQsTp3e3bmpTBiaLuzSDQSbIFWD&menu=nama_produk&query=" . $keyword;
 // identifikasi mata uang
 
-if ($keyword == 'USD'){
-	$mataUang = "Dollar Amerika Serikat";
-}else if($keyword == 'AUD'){
-	$mataUang = "Dollar Australia";
-}else if($keyword == 'CAD'){
-	$mataUang = "Dollar Kanada";
-}else if($keyword == 'CHF'){
-	$mataUang = "Franc Swiss";
-}else if($keyword == 'CNY'){
-	$mataUang = "Yuan China";
-}else if($keyword == 'DKK'){
-	$mataUang = "Krone Denmark";
-}else if($keyword == 'EUR'){
-	$mataUang = "Euro";
-}else if($keyword == 'GBP'){
-	$mataUang = "Poundsterling German";
-}else if($keyword == 'HKD'){
-	$mataUang = "Dollar Hongkong";
-}else if($keyword == 'JPY'){
-	$mataUang = "Yen Japan";
-}else if($keyword == 'NZD'){
-	$mataUang = "Dollar New Zealand";
-}else if($keyword == 'SAR'){
-	$mataUang = "Riyal Saudi Arabia";
-}else if($keyword == 'SEK'){
-	$mataUang = "Krona Swedia";
-}else if($keyword == 'SGD'){
-	$mataUang = "Dollar Singapore";
-}
-
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
 //	if ($json['message']['code'] == 200){
-        $result = "KURS MATA UANG";
+ 	$result = "Halo Gan, berikut produk yg ditemukan :";
+	for ($i=1; $i<10; $i++){
+	$result .= "\nNama Produk : ";
+	$result .= $json['data'][$i]['title'];
+	$result .= "\nNo. Sertifikat : ";
+	$result .= $json['data'][$i]['nomor_sertifikat'];
+	$result .= "\nProdusen : ";
+	$result .= $json['data'][$i]['produsen'];
+	$result .= "\nBerlaku Sampai : ";
+	$result .= $json['data'][$i]['berlaku_hingga'];
 	$result .= "\n";
-//	$result .= strtoupper($mataUang);
-//	$result	.= " (";
-//	$result .= $keyword . ")";
-//	$result .= "\n\nWaktu Efektif : ";
-	$result .= $json['status'];
-//	$result .= "\nHarga Jual : ";
-//	$result .= number_format($json['Data'][$keyword]['Jual']);
-//	$result .= "\nHarga Beli : ";
-//	$result .= number_format($json['Data'][$keyword]['Beli']);
+	}
 
     return $result;
 }
