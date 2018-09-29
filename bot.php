@@ -59,7 +59,8 @@ if ($kata1 <> 'HALAL' || $kata1 <> 'HELP' || $kata1 <> 'HALO' || $kata1 <> 'HAI'
                 		)
             		)
         	);
-	}
+}
+/*
 if ($kata1 == 'HALO' || $kata1 == 'HAI' || $kata1 == 'HALO,' || $kata1 == 'HAI,'){
 		$balas = array(
             	'replyToken' => $replyToken,
@@ -71,6 +72,7 @@ if ($kata1 == 'HALO' || $kata1 == 'HAI' || $kata1 == 'HALO,' || $kata1 == 'HAI,'
             		)
         	);
 	}
+*/
 
 #-------------------------[Function]-------------------------#
 function muiHalal($keyword) {
