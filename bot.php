@@ -52,7 +52,17 @@ if ($kata1 != "HALAL" or $kata1 != "HELP" or $kata1 != "HALO" or $kata1 != "HALO
         	);
 }
 */
-
+if ($command <> 'HALAL' || $command <> 'HALO'|| $command <> 'HAI'){
+		$balas = array(
+            	'replyToken' => $replyToken,
+            	'messages' => array(
+                	array(
+                    	'type' => 'text',
+                    	'text' => 'Maaf, maksudnya gmn ya kak?? ketik Help untuk bantuan ya?? ^_^'
+                		)
+            		)
+        	);
+	}
 
 
 
@@ -117,7 +127,8 @@ if($message['type']=='text') {
                 )
             )
         );
-    }else if ($command == 'HALO'){
+    }
+/* else if ($command == 'HALO'){
 	$balas = array(
         'replyToken' => $replyToken,
         'messages' => array(
@@ -127,7 +138,7 @@ if($message['type']=='text') {
         	)
            )
        	);
-}
+}*/
 }else if($message['type']=='sticker')
 {	
 	$balas = array(
