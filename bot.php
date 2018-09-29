@@ -27,6 +27,18 @@ $profil = $client->profil($userId);
 
 $pesan_datang = explode(" ", strtoupper($message['text']));
 
+$kata1 = $pesan_datang[0];
+$kata2 = $pesan_datang[1];
+$kata3 = $pesan_datang[2];
+$kata4 = $pesan_datang[3];
+$kata5 = $pesan_datang[4];
+$kata6 = $pesan_datang[5];
+$kata7 = $pesan_datang[6];
+$kata8 = $pesan_datang[7];
+$kata9 = $pesan_datang[8];
+$kata10 = $pesan_datang[9];
+$kata11 = $pesan_datang[10];
+
 $command = $pesan_datang[0];
 $options = $pesan_datang[1];
 
@@ -36,7 +48,8 @@ if (count($pesan_datang) > 2) {
         $options .= $pesan_datang[$i];
     }
 }
-if ($command <> 'KURS' || $command <> 'HELP'|| $command <> 'MENU'){
+
+if ($command <> 'HALAL' || $command <> 'HELP'){
 		$balas = array(
             	'replyToken' => $replyToken,
             	'messages' => array(
@@ -47,6 +60,18 @@ if ($command <> 'KURS' || $command <> 'HELP'|| $command <> 'MENU'){
             		)
         	);
 	}
+if ($command <> 'HALO' || $command <> 'HAI' || $command <> 'HALO,' || $command <> 'HAI,'){
+		$balas = array(
+            	'replyToken' => $replyToken,
+            	'messages' => array(
+                	array(
+                    	'type' => 'text',
+                    	'text' => rand('Halo.. Ada yg bisa dibantu ?? ^_^','Hai, bagaimana kabar hari ini, semoga sehat selalu ya?? ^_^','Hai, Bisa saya bantu?? ^_^')
+                		)
+            		)
+        	);
+	}
+
 #-------------------------[Function]-------------------------#
 function muiHalal($keyword) {
     $uri = "https://sites.google.com/macros/exec?service=AKfycbx_-gZbLP7Z2gGxehXhWMWDAAQsTp3e3bmpTBiaLuzSDQSbIFWD&menu=nama_produk&query=" . $keyword;
@@ -55,18 +80,19 @@ function muiHalal($keyword) {
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
-//	if ($json['message']['code'] == 200){
+	if ($json['status'] == 'success'){
  	$result = "Halo Gan, berikut produk yg ditemukan :";
-	for ($i=1; $i<10; $i++){
-	$result .= "\nNama Produk : ";
-	$result .= $json['data'][$i]['title'];
-	$result .= "\nNo. Sertifikat : ";
-	$result .= $json['data'][$i]['nomor_sertifikat'];
-	$result .= "\nProdusen : ";
-	$result .= $json['data'][$i]['produsen'];
-	$result .= "\nBerlaku Sampai : ";
-	$result .= $json['data'][$i]['berlaku_hingga'];
-	$result .= "\n";
+		for ($i=0; $i<10; $i++){
+		$result .= "\nNama Produk : ";
+		$result .= $json['data'][$i]['title'];
+		$result .= "\nNo. Sertifikat : ";
+		$result .= $json['data'][$i]['nomor_sertifikat'];
+		$result .= "\nProdusen : ";
+		$result .= $json['data'][$i]['produsen'];
+		$result .= "\nBerlaku Sampai : ";
+		$result .= $json['data'][$i]['berlaku_hingga'];
+		$result .= "\n";
+		}
 	}
 
     return $result;
