@@ -49,7 +49,7 @@ if (count($pesan_datang) > 2) {
     }
 }
 
-if ($command <> 'HALAL' || $command <> 'HELP'){
+if ($kata1 <> 'HALAL' || $kata1 <> 'HELP' || $kata1 <> 'HALO' || $kata1 <> 'HAI' || $kata1 <> 'HALO,' || $kata1 <> 'HAI,'){
 		$balas = array(
             	'replyToken' => $replyToken,
             	'messages' => array(
@@ -60,7 +60,7 @@ if ($command <> 'HALAL' || $command <> 'HELP'){
             		)
         	);
 	}
-if ($command <> 'HALO' || $command <> 'HAI' || $command <> 'HALO,' || $command <> 'HAI,'){
+if ($kata1 == 'HALO' || $kata1 == 'HAI' || $kata1 == 'HALO,' || $kata1 == 'HAI,'){
 		$balas = array(
             	'replyToken' => $replyToken,
             	'messages' => array(
