@@ -112,7 +112,18 @@ if ($type == 'join' || $command == 'MENU') {
         )
     );
 }
-
+if ($command == 'HALO') {
+    $text = "Halo Kakak";
+    $balas = array(
+        'replyToken' => $replyToken,
+        'messages' => array(
+            array(
+                'type' => 'text',
+                'text' => $text
+            )
+        )
+    );
+}
 //pesan bergambar
 if($message['type']=='text') {
 	if ($command == 'HALAL') {
