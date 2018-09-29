@@ -114,7 +114,8 @@ if ($type == 'join' || $command == 'MENU') {
 }
 if ($command == 'HALO' || $command == 'HAI' || $command == 'HALO,' || $command == 'HAI,' ||$command == 'SELAMAT') {
     $aray = ["Halo kakak.. Apa Kabar","Selamat Pagi.. Ayo Semangat","Hai Kakak, Gimana Kabarnya","Halo.. Halo.. Halo.."];
-    $text = array_rand($aray);
+    shuffle($aray);
+    $text = array_shift($aray);
     $balas = array(
         'replyToken' => $replyToken,
         'messages' => array(
