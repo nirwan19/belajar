@@ -51,17 +51,17 @@ if ($kata1 != "HALAL" or $kata1 != "HELP" or $kata1 != "HALO" or $kata1 != "HALO
 }
 */
 
-if ($command == 'HALO' || $command == 'HAI' || $command == 'HALO,' || $command == 'HAI,'){
-		$balas = array(
-            	'replyToken' => $replyToken,
-            	'messages' => array(
-                	array(
-                    	'type' => 'text',
-                    	'text' => rand('Halo.. Ada yg bisa dibantu ?? ^_^','Hai, bagaimana kabar hari ini, semoga sehat selalu ya?? ^_^','Hai, Bisa saya bantu?? ^_^')
-                		)
-            		)
-        	);
-	}
+if ($command == 'HALO'){
+	$balas = array(
+        'replyToken' => $replyToken,
+        'messages' => array(
+              	array(
+               	'type' => 'text',
+               	'text' => rand('Halo.. Ada yg bisa dibantu ?? ^_^','Hai, bagaimana kabar hari ini, semoga sehat selalu ya?? ^_^','Hai, Bisa saya bantu?? ^_^')
+        	)
+           )
+       	);
+}
 
 
 #-------------------------[Function]-------------------------#
