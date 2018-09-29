@@ -27,18 +27,6 @@ $profil = $client->profil($userId);
 
 $pesan_datang = explode(" ", strtoupper($message['text']));
 
-$kata1 = $pesan_datang[0];
-$kata2 = $pesan_datang[1];
-$kata3 = $pesan_datang[2];
-$kata4 = $pesan_datang[3];
-$kata5 = $pesan_datang[4];
-$kata6 = $pesan_datang[5];
-$kata7 = $pesan_datang[6];
-$kata8 = $pesan_datang[7];
-$kata9 = $pesan_datang[8];
-$kata10 = $pesan_datang[9];
-$kata11 = $pesan_datang[10];
-
 $command = $pesan_datang[0];
 $options = $pesan_datang[1];
 
@@ -63,7 +51,7 @@ if ($kata1 != "HALAL" or $kata1 != "HELP" or $kata1 != "HALO" or $kata1 != "HALO
 }
 */
 
-if ($kata1 == 'HALO' || $kata1 == 'HAI' || $kata1 == 'HALO,' || $kata1 == 'HAI,'){
+if ($command == 'HALO' || $command == 'HAI' || $command == 'HALO,' || $command == 'HAI,'){
 		$balas = array(
             	'replyToken' => $replyToken,
             	'messages' => array(
