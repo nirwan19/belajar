@@ -49,7 +49,7 @@ if (count($pesan_datang) > 2) {
     }
 }
 
-if ($kata1 <> 'HALAL' or $kata1 <> 'HELP' or $kata1 <> 'HALO' or $kata1 <> 'HAI' or $kata1 <> 'HALO,' or $kata1 <> 'HAI,'){
+if ($kata1 <> "HALAL" or $kata1 <> "HELP" or $kata1 <> "HALO" or $kata1 <> "HAI" or $kata1 <> "HALO," or $kata1 <> "HAI,"){
 		$balas = array(
             	'replyToken' => $replyToken,
             	'messages' => array(
