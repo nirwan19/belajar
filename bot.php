@@ -113,11 +113,8 @@ if ($type == 'join' || $command == 'MENU') {
     );
 }
 if ($command == 'HALO' || $command == 'HAI' || $command == 'HALO,' || $command == 'HAI,' ||$command == 'SELAMAT') {
-    $satu = "Halo kakak.. Apa Kabar";
-    $dua = "Selamat Pagi.. Ayo Semangat";
-    $tiga = "Hai Kakak, Gimana Kabarnya";	
-    $empat = "Halo.. Halo.. Halo..";	
-    $text = rand($satu, $dua, $tiga, $empat);
+    $aray = ["Halo kakak.. Apa Kabar","Selamat Pagi.. Ayo Semangat","Hai Kakak, Gimana Kabarnya","Halo.. Halo.. Halo.."];
+    $text = array_rand($aray);
     $balas = array(
         'replyToken' => $replyToken,
         'messages' => array(
