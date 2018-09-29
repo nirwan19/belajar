@@ -49,7 +49,7 @@ if (count($pesan_datang) > 2) {
     }
 }
 
-if ($kata1 <> "HALAL" or $kata1 <> "HELP" or $kata1 <> "HALO" or $kata1 <> "HAI" or $kata1 <> "HALO," or $kata1 <> "HAI,"){
+if (strcmp($kata1,"HALAL")!=1 or strcmp($kata1,"HELP")!=1 or strcmp($kata1,"HALO")!=1 or strcmp($kata1,"HALO,")!=1 or strcmp($kata1,"HAI,")!=1 or strcmp($kata1,"HAI")!=1){
 		$balas = array(
             	'replyToken' => $replyToken,
             	'messages' => array(
