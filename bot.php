@@ -112,8 +112,8 @@ if ($type == 'join' || $command == 'MENU') {
         )
     );
 }
-if ($command == 'HALO') {
-    $text = "Halo Kakak";
+if ($command == 'HALO' || $command == 'HAI' || $command == 'HALO,' || $command == 'HAI,' ||$command == 'SELAMAT' ||) {
+    $text = rand("Halo Kakak", "Selamat Pagi..", "Yuhu.. ");
     $balas = array(
         'replyToken' => $replyToken,
         'messages' => array(
