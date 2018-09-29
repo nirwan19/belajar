@@ -30,17 +30,7 @@ $pesan_datang = explode(" ", strtoupper($message['text']));
 $command = $pesan_datang[0];
 $options = $pesan_datang[1];
 
-if ($command == 'HALO'){
-	$balas = array(
-        'replyToken' => $replyToken,
-        'messages' => array(
-              	array(
-               	'type' => 'text',
-               	'text' => rand('Halo.. Ada yg bisa dibantu ?? ^_^','Hai, bagaimana kabar hari ini, semoga sehat selalu ya?? ^_^','Hai, Bisa saya bantu?? ^_^')
-        	)
-           )
-       	);
-}
+
 
 if (count($pesan_datang) > 2) {
     for ($i = 2; $i < count($pesan_datang); $i++) {
@@ -127,7 +117,17 @@ if($message['type']=='text') {
                 )
             )
         );
-    }
+    }else if ($command == 'HALO'){
+	$balas = array(
+        'replyToken' => $replyToken,
+        'messages' => array(
+              	array(
+               	'type' => 'text',
+               	'text' => rand('Halo.. Ada yg bisa dibantu ?? ^_^','Hai, bagaimana kabar hari ini, semoga sehat selalu ya?? ^_^','Hai, Bisa saya bantu?? ^_^')
+        	)
+           )
+       	);
+}
 }else if($message['type']=='sticker')
 {	
 	$balas = array(
