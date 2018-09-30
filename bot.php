@@ -104,9 +104,8 @@ if ($type == 'join' || $command == 'MENU') {
     $text = "Assalamualaikum Agan, untuk mendapatkan Nilai Mata uang, silahkan ketik\n\n KURS <Kode Mata Uang>\n\nnanti aku informasikan nilai mata uangnya ya?? ^_^";
     $balas = array(
         'replyToken' => $replyToken,
-        'messages' => array(
-            array(
-                 "type": "bubble",
+        'messages' => {
+  "type": "bubble",
   "header": {
     "type": "box",
     "layout": "vertical",
@@ -144,8 +143,7 @@ if ($type == 'join' || $command == 'MENU') {
   "styles": {
     "comment": "See the example of a bubble style object"
   }
-            )
-        )
+}
     );
 }
 if ($command == 'HALO' || $command == 'HAI' || $command == 'HALO,' || $command == 'HAI,' ||$command == 'SELAMAT') {
