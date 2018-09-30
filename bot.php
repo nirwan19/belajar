@@ -106,8 +106,25 @@ if ($type == 'join' || $command == 'MENU') {
         'replyToken' => $replyToken,
         'messages' => array(
             array(
-                'type' => 'text',
-                'text' => $text
+                 "type": "flex",
+  		 "altText": "this is a flex message",
+  		 "contents": {
+    	 	 "type": "bubble",
+    		 "body": {
+      		 "type": "box",
+      		 "layout": "vertical",
+      		 "contents": [
+        			{
+          			"type": "text",
+          			"text": "hello"
+        			},
+        	{
+          	"type": "text",
+          	"text": "world"
+        	}
+      		]
+    		}
+  		}
             )
         )
     );
