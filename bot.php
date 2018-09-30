@@ -98,57 +98,19 @@ if ($type == 'join' || $command == 'MENU') {
     $text = "Assalamualaikum Agan, untuk mendapatkan Nilai Mata uang, silahkan ketik\n\n KURS <Kode Mata Uang>\n\nnanti aku informasikan nilai mata uangnya ya?? ^_^";
         $balas = array(
         'replyToken' => $replyToken,
-        'messages' => array(
-                array(
-                'type'=> 'bubble',
-                "header"=>  array(
-                  array(
-    "type"=> "box",
-    "layout"=> "vertical",
-    "contents"=> array(
-      array(
-        "type"=> "text",
-        "text"=> "Header text"
-      )
-    )
-  )
-                )
-    )
-      ),
-  "hero"=> array(
-    "type"=> "image",
-    "url"=> "https://example.com/flex/images/image.jpg"
-  ),
-  "body"=> array(
-    array(
-    "type"=> "box",
-    "layout"=> "vertical",
-    "contents"=> array(
-      array(
-        "type"=> "text",
-        "text"=> "Body text"
-      )
-    )
-    )
-  ),
-  "footer"=> array(
-    array(
-    "type"=> "box",
-    "layout"=> "vertical",
-    "contents"=> array(
-      array(
-        "type"=> "text",
-        "text"=> "Footer text"
-      )
-    )
-    )
-  ),
-  "styles"=> array(
-  array(
-    "comment"=> "See the example of a bubble style object"
-  )
-        )
-    );
+        'messages' =>  array(
+    array(   
+   "type"=>"uri",
+   "label"=>"https://example.com/",
+   "linkUri"=>"https://example.com/",
+   "area"=>array(  
+      "x"=>0,
+      "y"=>0,
+      "width"=>520,
+      "height"=>1040
+   )
+ )
+);
 }
 if ($command == 'HALO' || $command == 'HAI' || $command == 'HALO,' || $command == 'HAI,' ||$command == 'SELAMAT') {
     $aray = ["Halo kakak.. Apa Kabar","Selamat Pagi.. Ayo Semangat","Hai Kakak, Gimana Kabarnya","Halo.. Halo.. Halo.."];
