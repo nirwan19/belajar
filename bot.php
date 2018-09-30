@@ -110,6 +110,7 @@ if ($type == 'join' || $command == 'MENU') {
       "height"=>1040
    )
  )
+)
 );
 }
 if ($command == 'HALO' || $command == 'HAI' || $command == 'HALO,' || $command == 'HAI,' ||$command == 'SELAMAT') {
