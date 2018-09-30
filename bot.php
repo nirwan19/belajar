@@ -101,44 +101,53 @@ if ($type == 'join' || $command == 'MENU') {
         'messages' => array(
                 array(
                 'type'=> 'bubble',
-                "header"=>  [
+                "header"=>  array(
+                  array(
     "type"=> "box",
     "layout"=> "vertical",
-    "contents"=> [
-      
+    "contents"=> array(
+      array(
         "type"=> "text",
         "text"=> "Header text"
-      
-    ]
-  ],
-  "hero"=> [
+      )
+    )
+  )
+                )
+    )
+      ),
+  "hero"=> array(
     "type"=> "image",
     "url"=> "https://example.com/flex/images/image.jpg"
-  ],
-  "body"=> [
+  ),
+  "body"=> array(
+    array(
     "type"=> "box",
     "layout"=> "vertical",
-    "contents"=> [
-      
+    "contents"=> array(
+      array(
         "type"=> "text",
         "text"=> "Body text"
-      
-    ]
-  ],
-  "footer"=> [
+      )
+    )
+    )
+  ),
+  "footer"=> array(
+    array(
     "type"=> "box",
     "layout"=> "vertical",
-    "contents"=> [
-      
+    "contents"=> array(
+      array(
         "type"=> "text",
         "text"=> "Footer text"
-      
-    ]
-  ],
-  "styles"=> [
+      )
+    )
+    )
+  ),
+  "styles"=> array(
+  array(
     "comment"=> "See the example of a bubble style object"
-  ]
-        ))
+  )
+        )
     );
 }
 if ($command == 'HALO' || $command == 'HAI' || $command == 'HALO,' || $command == 'HAI,' ||$command == 'SELAMAT') {
