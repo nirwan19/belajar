@@ -98,8 +98,7 @@ if ($type == 'join' || $command == 'MENU') {
     $text = "Assalamualaikum Agan, untuk mendapatkan Nilai Mata uang, silahkan ketik\n\n KURS <Kode Mata Uang>\n\nnanti aku informasikan nilai mata uangnya ya?? ^_^";
         $balas = array(
         'replyToken' => $replyToken,
-        'messages' =>  array(
-    array(   
+        'messages' =>  array(   
    "type"=>"uri",
    "label"=>"https://example.com/",
    "linkUri"=>"https://example.com/",
@@ -109,7 +108,7 @@ if ($type == 'join' || $command == 'MENU') {
       "width"=>520,
       "height"=>1040
    )
- )
+ 
 )
 );
 }
