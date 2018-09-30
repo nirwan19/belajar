@@ -9,8 +9,8 @@ Modified @ Farzain - zFz
 require_once('./line_class.php');
 require_once('./unirest-php-master/src/Unirest.php');
 
-$channelAccessToken = 'L6ppUhvXPvaIr1w/roEyT0tPfbM4iD22TQ6PGWbk1P+t5Q0bxgI8uwQZEHfM3XIs+0g4y0EMoL7eJIpleTWLVsE6LlmKae9l5LgAjTKpFINSspaRr9Gj62XkrYtZigcN22AneDD41G+KBH5gvOemRgdB04t89/1O/w1cDnyilFU='; //sesuaikan 
-$channelSecret = 'e5ce69331dc64e90d1ee5f55f24f272d';//sesuaikan
+$channelAccessToken = '0HTAZoDwTrJ7sCb1XZVFPuDqkt/HF0DPDW1GY8NWtf9X6x9Ko/+WHbiGBOqfItiQQrYFv9Dsi8CD/2uA/etHuH2Dqn2kDGYCzSGjwuB5g6vh48GMR/3pYeOlUUPqgSgNs/HmVa/JQknlsZEs5lWzMAdB04t89/1O/w1cDnyilFU='; //sesuaikan 
+$channelSecret = 'f0c73f23492125096da452b0ee3f6965';//sesuaikan
 
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 
@@ -57,8 +57,21 @@ if ($command <> 'HALAL' || $command <> 'HALO'|| $command <> 'HAI'){
             	'replyToken' => $replyToken,
             	'messages' => array(
                 	array(
-                    	'type' => 'text',
-                    	'text' => 'Maaf, maksudnya gmn ya kak?? ketik Help untuk bantuan ya?? ^_^'
+                    	"type": "flex",
+      "altText": "This is a Flex Message",
+      "contents": {
+        "type": "bubble",
+        "body": {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "text",
+              "text": "Hello,"
+            },
+            {
+              "type": "text",
+              "text": "World!"
                 		)
             		)
         	);
