@@ -96,50 +96,49 @@ function muiHalal($keyword) {
 //show menu, saat join dan command /menu
 if ($type == 'join' || $command == 'MENU') {
     $text = "Assalamualaikum Agan, untuk mendapatkan Nilai Mata uang, silahkan ketik\n\n KURS <Kode Mata Uang>\n\nnanti aku informasikan nilai mata uangnya ya?? ^_^";
-    $balas = array(
+        $balas = array(
         'replyToken' => $replyToken,
         'messages' => array(
-            		array(
-	    		"type"=> "bubble",
-  "header"=> {
+                array(
+                'type'=> 'bubble',
+                "header"=>  [
     "type"=> "box",
     "layout"=> "vertical",
     "contents"=> [
-      {
+      
         "type"=> "text",
         "text"=> "Header text"
-      }
+      
     ]
-  },
-  "hero"=> {
+  ],
+  "hero"=> [
     "type"=> "image",
     "url"=> "https://example.com/flex/images/image.jpg"
-  },
-  "body"=> {
+  ],
+  "body"=> [
     "type"=> "box",
     "layout"=> "vertical",
     "contents"=> [
-      {
+      
         "type"=> "text",
         "text"=> "Body text"
-      }
+      
     ]
-  },
-  "footer"=> {
+  ],
+  "footer"=> [
     "type"=> "box",
     "layout"=> "vertical",
     "contents"=> [
-      {
+      
         "type"=> "text",
         "text"=> "Footer text"
-      }
+      
     ]
-  },
-  "styles"=> {
+  ],
+  "styles"=> [
     "comment"=> "See the example of a bubble style object"
-  }
-				)
-		)
+  ]
+        ))
     );
 }
 if ($command == 'HALO' || $command == 'HAI' || $command == 'HALO,' || $command == 'HAI,' ||$command == 'SELAMAT') {
