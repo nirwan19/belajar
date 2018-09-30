@@ -100,9 +100,9 @@ if ($type == 'join' || $command == 'MENU') {
         'replyToken' => $replyToken,
         'messages' => array(
             		array(
-	    		'type': 'image',
-    			'originalContentUrl': 'https://example.com/original.jpg',
-    			'previewImageUrl": "https://example.com/preview.jpg'
+	    		'type' => 'image',
+    			'originalContentUrl' => 'https://example.com/original.jpg',
+    			'previewImageUrl' => 'https://example.com/preview.jpg'
 				)
 		)
     );
