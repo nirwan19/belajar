@@ -53,14 +53,14 @@ if ($kata1 != "HALAL" or $kata1 != "HELP" or $kata1 != "HALO" or $kata1 != "HALO
 }
 */
 if ($command <> 'HALAL' || $command <> 'HALO'|| $command <> 'HAI'){
-		$text = 'coba lagi dong';
 		$balas = array(
             	'replyToken' => $replyToken,
             	'messages' => array(
-                'type' => 'text',
-                'text' => $text
-            )
-        )
+                	array(
+                    	'type' => 'text',
+                    	'text' => 'Maaf, maksudnya gmn ya kak?? ketik Help untuk bantuan ya?? ^_^'
+                		)
+            		)
         	);
 	}
 
