@@ -53,31 +53,14 @@ if ($kata1 != "HALAL" or $kata1 != "HELP" or $kata1 != "HALO" or $kata1 != "HALO
 }
 */
 if ($command <> 'HALAL' || $command <> 'HALO'|| $command <> 'HAI'){
+		$text = 'coba lagi dong';
 		$balas = array(
             	'replyToken' => $replyToken,
-            	'messages' => [
-    {
-      "type": "flex",
-      "altText": "This is a Flex Message",
-      "contents": {
-        "type": "bubble",
-        "body": {
-          "type": "box",
-          "layout": "horizontal",
-          "contents": [
-            {
-              "type": "text",
-              "text": "Hello,"
-            },
-            {
-              "type": "text",
-              "text": "World!"
-            }
-          ]
-        }
-      }
-    }
-  ]
+            	'messages' => array(
+                'type' => 'text',
+                'text' => $text
+            )
+        )
         	);
 	}
 
